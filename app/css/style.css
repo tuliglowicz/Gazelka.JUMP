@@ -1,0 +1,181 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /*background-color: rgb(150, 255, 150);*/
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 10pt;
+}
+button, input[type='submit'] {
+  cursor: pointer;
+  width: 100%;
+}
+button:hover, input[type='submit']:hover {
+  text-decoration: underline;
+}
+
+ .hidden {
+  display: none;
+ }
+
+#editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 500px;
+  height: 100%;
+  z-index: 9;
+}
+
+.ace_editor {
+  position: absolute;
+  opacity: .05;
+  width: 500px;
+  height: 100%;
+  right: 0;
+}
+.ace_editor.ace_focus, .ace_autocomplete {
+  opacity: 1;
+}
+
+.gazelka__icon {
+  position: absolute;
+  -webkit-transform: translate3d(-50%,-50%,0);
+  transition: all .3s ;
+  transition-timing-function: ease-in-out;
+}
+
+.small {
+  transform: scale3d(.25,.25,1)
+}
+.bigg {
+  transform: scale3d(1,1,1)
+}
+
+#config {
+  position: absolute;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+#canvas {
+  border:1px solid lime;
+  /*border:0;*/
+  margin:0;
+  padding:0;
+  background-color: #F0F0F0;
+  display: block;
+}
+
+.desen {
+  display: block;
+  position: absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height: 100%;
+  z-index: -1;
+  /*background-color: black;*/
+}
+
+.dim {
+  opacity: .5;
+}
+
+.form--container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: silver;
+  outline:1px solid gray;
+  height: 100%;
+  margin:0;
+  max-width: 200px;
+}
+
+.form--code {
+  width: 175px;
+  height: 250px;
+}
+
+.pseudoform {
+  padding: 0 10px 0 10px;
+}
+
+.logo {
+  width: 200px;
+  border-bottom: 1px solid gray;
+}
+
+#parsedOrdersContainer {
+  position: absolute;
+  bottom: 0;
+  left: 200px;
+  border: 1px solid gray;
+  width: calc(100% - 402px);
+  background-color: silver;
+  text-align: center;
+}
+
+#parsedOrdersContainer b {
+  float: left;
+}
+
+#parsedOrders {
+  display: inline-block;
+}
+
+#error {
+  color: red;
+}
+
+#errorContainer {
+  position: absolute;
+  top:0;
+  right: 0;
+  display: block;
+  width: 200px;
+  background-color: silver;
+  display: none;
+  height: 100%;
+}
+
+#errorContainer > * {
+  display: inline-block;
+  margin: 5px;
+}
+
+#errorContainer.show {
+  display: block;
+}
+
+.errorLink {
+  display: inline-block;
+  color: #F22;
+  text-decoration: none;
+  transition: padding .2s;
+}
+.errorLink:hover {
+  border-left:2px solid red;
+  padding-left: 4px;
+  color: #F00;
+}
+
+
+.configOptions__ul {
+  list-style-type: none;
+  padding: 0px;
+}
+.configOptions__li {
+  display: inline-block;
+  padding-right: 5px;
+}
+.configOptions__label {
+  font-size: 10px;
+  font-family: sans-serif;
+}
+.configOptions__input {
+  
+}
