@@ -4,8 +4,12 @@
 
 const geval = eval;
 function prepareOnKeyDown( editor, storer ) {
+  console.log(editor, storer, '--')
   return (e) => {
+    // e.preventDefault()
+    // e.stopPropagation()
     if (e.key === "Enter" && e.ctrlKey && e.shiftKey) {
+      console.log(editor.getValue(),'--')
       geval(editor.getValue());
       storer.store(editor.getValue());
     }

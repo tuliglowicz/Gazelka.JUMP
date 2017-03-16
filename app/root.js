@@ -20,16 +20,14 @@ const gazelkaInjections = require( "./gazelkaInjections" )
 const { prepareOnKeyDown } = require("./eventHandlers");
 // ==============================================================
 
-
 const init = function( global, ctx ) {
   const { config, permanentConfig } = getConfig( storer )
   const { editor, ace } = initEditor( storer.retrieve() );
   gazelkaInjections( global );
   var gazelleGod = getGazelleInstance();
 
-  global.onKeyDown = prepareOnKeyDown( editor, storer )
+  global.document.body.addEventListener('keydown', prepareOnKeyDown( editor, storer ) )
 
-  
   global.Gazelka = {
     JUMP: (orders) => {
       // const stateTreeProcessor = function( stateTree, gazelka, config ){

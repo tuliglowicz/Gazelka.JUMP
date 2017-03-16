@@ -10,30 +10,33 @@ module.exports = (function(){
 //     T90 - równoznaczne z L
 //     T-90 - równoznaczne z R
 
-Gazelka.JUMP( "" ); // w cudzysłowia wpisz instrukcje`;
+Gazelka.JUMP( "" ); // w cudzysłowia wpisz instrukcje
 
-  addSnippets = (ace) => {
-    // adds snippets
-    const snippetManager = ace.acequire("ace/snippets").snippetManager;
-    const snippets = [
-        {
-            "name": "for_Gazelka.JUMP",
-            "content": "for ( ${1:i} = ${2:0}; ${1:i} < ${3:limit}; ${1:i}++ ) {\n    ${4://Ciało pętli}\n}",
-            "tabTrigger": "forjump"
-        },
-        {
-            "name": "Gazelka.JUMP",
-            "content": "Gazelka.JUMP( ${1:instrukcja} );",
-            "tabTrigger": "jump"
+//Ctrl+Enter, aby odpalić kod
+`;
+
+  // addSnippets = (ace) => {
+  //   // adds snippets
+  //   const snippetManager = ace.acequire("ace/snippets").snippetManager;
+  //   const snippets = [
+  //       {
+  //           "name": "for_Gazelka.JUMP",
+  //           "content": "for ( ${1:i} = ${2:0}; ${1:i} < ${3:limit}; ${1:i}++ ) {\n    ${4://Ciało pętli}\n}",
+  //           "tabTrigger": "forjump"
+  //       },
+  //       {
+  //           "name": "Gazelka.JUMP",
+  //           "content": "Gazelka.JUMP( ${1:instrukcja} );",
+  //           "tabTrigger": "jump"
             
-        }
-    ]
-    const snippetFile = snippetManager.files['ace/mode/javascript'];
-    snippets.forEach(function(o){
-      snippetFile.snippets.push(o)
-    })
-    snippetManager.register(snippetFile.snippets, snippetFile.scope)
-  }
+  //       }
+  //   ]
+  //   const snippetFile = snippetManager.files['ace/mode/javascript'];
+  //   snippets.forEach(function(o){
+  //     snippetFile.snippets.push(o)
+  //   })
+  //   snippetManager.register(snippetFile.snippets, snippetFile.scope)
+  // }
 
   const initEditor = function( initialValue ) {
     require('brace/mode/javascript');
@@ -41,7 +44,7 @@ Gazelka.JUMP( "" ); // w cudzysłowia wpisz instrukcje`;
     require("brace/ext/language_tools")
     require("brace/ext/spellcheck")
     require("brace/ext/whitespace")
-    require("brace/snippets/javascript")
+    // require("brace/snippets/javascript")
     require("brace/ext/searchbox");
     editor.getSession().setMode('ace/mode/javascript');
     editor.setTheme('ace/theme/cobalt');
@@ -50,12 +53,12 @@ Gazelka.JUMP( "" ); // w cudzysłowia wpisz instrukcje`;
     delete ace.acequire('ace/autocomplete').Autocomplete.prototype.commands.Tab
 
     editor.setOptions({
-      enableSnippets: true,
+      // enableSnippets: true,
       enableLiveAutocompletion: true,
       fontSize: 16
     });
 
-    addSnippets( ace );
+    // addSnippets( ace );
 
     // set initial value
     editor.setValue( initialValue || commandsDescription )
@@ -86,12 +89,12 @@ Gazelka.JUMP( "" ); // w cudzysłowia wpisz instrukcje`;
     "wrap_attributes_indent_size": 4,
   };
 
-  const { js_beautify } = require('../node_modules/js-beautifier/beautify')
-  const beautify = function (e) {
-    const output = js_beautify(editor.getValue(), beautifierOptions);
-    editor.setValue(output);
-    editor.focus();
-  };
+  // const { js_beautify } = require('../node_modules/js-beautifier/beautify')
+  // const beautify = function (e) {
+  //   const output = js_beautify(editor.getValue(), beautifierOptions);
+  //   editor.setValue(output);
+  //   editor.focus();
+  // };
 
-  return { initEditor, beautify }
+  return { initEditor/*, beautify */}
 })()

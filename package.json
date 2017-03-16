@@ -13,7 +13,6 @@
     "babel-loader": "^6.2.9",
     "babel-preset-es2015": "^6.24.0",
     "brace": "^0.9.1",
-    "js-beautifier": "^0.9.1",
     "webpack": "^1.14.0"
   },
   "scripts": {
