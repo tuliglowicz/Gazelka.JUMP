@@ -5,7 +5,7 @@ const getConfig = (function(storer){
     bgColor: "#F0F0F0",
     pencilColor: "#000000",
     gazelkaStepAnimation: 3,
-    withAnimation: true,
+    withAnimation: false,
     step: 20, // 20px quantum step
     configVarName: 'config'
   };
@@ -67,8 +67,6 @@ const getConfig = (function(storer){
       prefix: "Gazelka.JUMP_",
       step: 20, //px
     };
-
-    console.log( getCentralPoint(), obj.getInitialGazelleState(), '--')
 
     return obj;
   })();

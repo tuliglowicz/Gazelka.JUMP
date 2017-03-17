@@ -9,10 +9,24 @@ module.exports = (function(){
 // T (turn) - obrót o zadany kąt w stopniach, przykłady: T45, T-60
 //     T90 - równoznaczne z L
 //     T-90 - równoznaczne z R
+  
+//==================wow1===========================
+//  for( var i=3; i<50; i++){
+//      Gazelka.JUMP( (F+T(360/i)).r(i) )
+//  }
 
-Gazelka.JUMP( "" ); // w cudzysłowia wpisz instrukcje
-
-//Ctrl+Enter, aby odpalić kod
+//===================wow2=============================  
+var noOfColors = 11;
+var times=64;
+var bok, bok2, colorId; //bok - widzialny, bok2 - niewidzialny
+for( var n = 2; n<noOfColors; n++){        // Gazelka.clear()
+    var bok = F.r(12-n);
+    var bok2 = f.r(12-n);
+    var colorId = (n%noOfColors)+1;
+    
+    Gazelka.JUMP( (C(colorId)+bok2+R+bok+R+bok+R+bok2+R+T(360/times)).r(times) );
+    // Gazelka.JUMP( "F".r(n)+R );
+}
 `;
 
   // addSnippets = (ace) => {

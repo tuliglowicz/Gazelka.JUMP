@@ -1,7 +1,7 @@
 "use strict";
 
 function move(state, actualStep){
-  console.log( state, actualStep, '--==')
+  // console.log( state, actualStep, '--==')
   state.x += Math.cos(state.angle)*(actualStep)
   state.y += Math.sin(state.angle)*(actualStep)
   return state
